@@ -27,7 +27,7 @@
 | USE_AGENTIC_RETRIEVAL | Enable agentic retrieval | true |
 
 ## SDK Requirements
-- boto3 >= 1.43 for managed search and agentic retrieval
+- boto3 >= 1.43.2 for managed search and agentic retrieval
 - aws-cdk-lib >= 2.170.0 for KB L1 constructs
 
 ## Required IAM Permissions
@@ -36,7 +36,7 @@
   "Effect": "Allow",
   "Action": [
     "bedrock:Retrieve",
-    "bedrock:AgenticRetrieve"
+    "bedrock:AgenticRetrieveStream"
   ],
   "Resource": "arn:aws:bedrock:<region>:<account-id>:knowledge-base/<kb-id>"
 }

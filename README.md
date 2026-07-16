@@ -99,7 +99,7 @@ aws bedrock-agent create-knowledge-base \
 
 The CDK stack in this project has been updated to support both managed and vector knowledge bases. Set `KNOWLEDGE_BASE_TYPE=MANAGED` in the Lambda environment to use managed retrieval.
 
-> **Note:** Managed KBs require `boto3 >= 1.43` for managed search and agentic retrieval.
+> **Note:** Managed KBs require `boto3 >= 1.43.2` for managed search and agentic retrieval.
 
 **Reranking options** for managed search: `MANAGED` (default — automatic), `NONE` (disable reranking), `CUSTOM` (your own Bedrock reranking model e.g. Cohere Rerank v3.5).
 
@@ -109,7 +109,7 @@ The CDK stack in this project has been updated to support both managed and vecto
   "Effect": "Allow",
   "Action": [
     "bedrock:Retrieve",
-    "bedrock:AgenticRetrieve"
+    "bedrock:AgenticRetrieveStream"
   ],
   "Resource": "arn:aws:bedrock:<region>:<account-id>:knowledge-base/<kb-id>"
 }
